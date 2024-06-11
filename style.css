@@ -3,6 +3,7 @@
     --background: #0e0f0c;
     --primary: #bcc3b3;
     --secondary: #444a56;
+    --secondary-low: rgba(68, 74, 86, 0.25);
     --accent: #837390;
 }
 
@@ -11,36 +12,47 @@
     margin: 0;
     color: var(--text);
     font-family: Vazirmatn;
+    text-decoration: none;
 }
 
 .container {
     background-color: var(--background);
-    height: 100vh;
-    padding: 30px;
+    height: calc(100vh - 40px);
+    padding: 20px;
 }
 
-header {
+.right-section {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: start;
+    height: 100%;
+    width: 15%;
 }
 
-.header-right,
-.profile-name,
-.icon-container,
-.header-left {
+.pages {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 10px;
+
+}
+
+.pages a {
+    padding: 10px;
+    width: 100%;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    column-gap: 10px;
 }
 
-.header-left {
-    gap: 10px;
-    font-size: 20px;
-    font-weight: 600;
+.pages a.active {
+    background-color: var(--secondary-low);
 }
 
-.header-right {
-    gap: 35px;
+.pages a.active svg {
+    color: var(--accent) !important;
 }
 
 .profile-name {
@@ -53,4 +65,12 @@ header {
     background-color: var(--primary);
     border-radius: 50%;
     background: url("./assets/images/profile.jfif") center/cover
+}
+
+.log-out-button {
+    background-color: var(--background);
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
